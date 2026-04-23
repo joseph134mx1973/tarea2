@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Foto con cámara móvil</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="app">
+    <section class="card camera-card">
+      <h1>Captura de placa vehicular</h1>
+      <p>Usa la cámara del celular o sube una imagen de placa vehicular. La aplicación extraerá el texto y eliminará el símbolo "-".</p>
+
+      <div class="video-wrapper">
+        <video id="cameraVideo" autoplay playsinline></video>
+        <div id="videoOverlay" class="video-overlay">Presiona "Iniciar cámara"</div>
+      </div>
+
+      <div class="controls">
+        <button id="startCamera">Iniciar cámara</button>
+        <button id="takePhoto" disabled>Tomar foto</button>
+        <button id="stopCamera" disabled>Detener cámara</button>
+      </div>
+      <div class="upload-group">
+        <label for="uploadImage">O subir imagen de placa vehicular</label>
+        <input id="uploadImage" type="file" accept="image/*" />
+      </div>
+    </section>
+
+    <section class="card preview-card">
+      <h2>Foto capturada</h2>
+      <div class="preview-frame">
+        <canvas id="photoCanvas"></canvas>
+        <p id="noPhotoText">Aún no hay foto capturada.</p>
+      </div>
+      <a id="downloadLink" class="download-button disabled" download="foto-capturada.png">Descargar imagen</a>
+      <input id="plateResult" class="plate-result" readonly value="El texto de la placa aparecerá aquí luego de tomar la foto." aria-label="Texto de placa" />
+    </section>
+  </main>
+
+  <script src="/node_modules/tesseract.js/dist/tesseract.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

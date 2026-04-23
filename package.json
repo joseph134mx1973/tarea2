@@ -1,0 +1,15 @@
+{
+  "name": "tarea-2-camara",
+  "version": "1.0.0",
+  "description": "Aplicación web para tomar foto con la cámara del celular",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "tesseract.js": "^4.0.2"
+  },
+  "engines": {
+    "node": ">=14"
+  }
+}
